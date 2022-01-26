@@ -9,7 +9,7 @@ KiCad 5.1.5 files
 
 Computer Keyboard version 3 system built around an 8-bit Atmel ATmega 32u4 microcontroller. A normal ISO keyboard layout is used. The pcb design is for Cherry keycaps. Schematics layout and connections are a bit simplified over version 2.
 
-An option is given for the onboard microcontroller to handle also the control for PSU board, the oled module, bluetooth module and the ps/2 touchpad module. For this I2C, SPI and PS/2 serial connections are exposed - and are optional. The QMK code is has not been updated with these options yet. 
+An option is given for the onboard microcontroller to handle also the control for PSU board, the oled module, bluetooth module and the ps/2 touchpad module. For this I2C, SPI and PS/2 serial connections are exposed - and are optional. The QMK code has not been updated with these options yet. 
 
 QMK code in QMK folder reflects the simplifications of this version - basically just the more straightforward selection of row pins of the microcontroller.
 
