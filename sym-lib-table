@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name arduino_promicro)(type Legacy)(uri ${KIPRJMOD}/arduino_promicro.lib)(options "")(descr ""))
-  (lib (name BalthazarKeyboard3-rescue)(type Legacy)(uri ${KIPRJMOD}/BalthazarKeyboard3-rescue.lib)(options "")(descr ""))
-  (lib (name BalthazarKeyboard3-keycaps-rescue)(type Legacy)(uri ${KIPRJMOD}/BalthazarKeyboard3-keycaps-rescue.lib)(options "")(descr ""))
-)
