@@ -1,0 +1,6 @@
+site: https://github.com/balthazar-space/balthazarKeyboard3
+color: black
+gerbers: kicad/gerbers
+eda:
+  type: kicad
+  pcb: kicad/BalthazarKeyboard3-keycaps.kicad_pcb
