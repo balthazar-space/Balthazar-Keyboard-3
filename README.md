@@ -17,3 +17,11 @@ Keyboard pcb has dimensions predefined by the LCD's dimensions of 13.3 inch diag
 
 The keys have some ergonomic solution that gives some additional design touch. The keycaps here are positioned vertically which is not the best solution (keycaps orientation should follow the wave of the design...). 
 
+## Funding
+
+This project is funded through the [NGI Zero Entrust Fund](https://nlnet.nl/entrust), a fund
+established by [NLnet](https://nlnet.nl) with financial support from the European Commission's
+[Next Generation Internet](https://ngi.eu) program. Learn more on the [NLnet project page](https://nlnet.nl/project/Balthazar-Casing/).
+
+[<img src="https://nlnet.nl/logo/banner.png" alt="NLNet foundation logo" width="300" />](https://nlnet.nl)
+[<img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="NGI0 Entrust Logo" width="300" />](https://nlnet.nl/entrust)
