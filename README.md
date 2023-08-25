@@ -1,5 +1,5 @@
-# balthazarKeyboard3
-balthazar keyboard with keycaps
+# Balthazar Keyboard 3
+Balthazar keyboard with keycaps
 
 Open-hardware laptop computer modules
 
