@@ -2,9 +2,7 @@
 
 Open-hardware laptop computer modules description and concept.
 
-These are electronic schematic modules as presented at https://balthazar.space/wiki/Balthazar with the main aim for team access.
-
-KiCad 5.1.5 files are uploaded here as well as the drawings pictures and firmware code.
+These are electronic schematic modules as presented at https://balthazar.space/wiki/Balthazar with the main aim for team access. See the [main repository](https://github.com/balthazar-space/balthazar) for other designs.
 
 # Balthazar Keyboard 3
 
@@ -20,9 +18,11 @@ Keyboard pcb has dimensions predefined by the LCD's dimensions of 13.3 inch diag
 
 The keys have some ergonomic solution that gives some additional design touch. The keycaps here are positioned vertically which is not the best solution (keycaps orientation should follow the wave of the design...). 
 
+KiCad 5.1.5 files are uploaded here as well as the drawings pictures and firmware code.
+
 ## License
 
-All resources licensed under the CERN Open Hardware Licence CERN-OHL W V.2.0
+All resources except the keyboard firmware - which is licensed with with GPLv3 or later - licensed under the CERN Open Hardware Licence CERN-OHL W V.2.0
 
 Version 2.0 of the CERN-OHL introduces three variants of the licence – strongly (S) reciprocal, weakly (W) reciprocal and permissive (P) – which aim to address specific constraints caused by different collaboration models currently used in open-hardware projects. 
 
