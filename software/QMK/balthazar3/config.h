@@ -17,23 +17,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED 
-#define PRODUCT_ID      0xBAFE
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    BALTHAZAR
-#define PRODUCT         USB Keyboard
-#define DESCRIPTION     QMK_77KEYS
-
 /*
-To use QMK keyboard on android or windows - use VID and PID from some more popular device - like Logitech G413. 
+To use QMK keyboard on android or windows - use VID and PID from some more popular device - like Logitech G413.
 Hm, not ok
                  VID          PID
 Logitech G413 -> 0x046D       0xC33A
 Logitech G815 -> 0x046D       0xC33F
-
 */
 
 /*
@@ -41,7 +30,6 @@ Logitech G815 -> 0x046D       0xC33F
  *  These options are also useful to firmware size reduction.
  */
 
-//#define NO_ACTION_LAYER // disable layers totally
 #define NO_ACTION_TAPPING // disable tap dance and other tapping features
 #define NO_ACTION_ONESHOT // disable one-shot modifiers
 
@@ -50,7 +38,7 @@ Logitech G815 -> 0x046D       0xC33F
 // 7x11 ROW2COL
 #define DIODE_DIRECTION ROW2COL
 
-// key matrix size: we are forking to left and right 
+// key matrix size: we are forking to left and right
 #define MATRIX_COLS 11	 // pulled-up cols are inputs (unselected) and outputs: selecting - low = selected row; input high = unselected row
 #define MATRIX_ROWS 7 //  pulled-up rows are inputs for reading - key pressed = low detected for selected col
 
@@ -59,13 +47,13 @@ Logitech G815 -> 0x046D       0xC33F
 #define MATRIX_COL_PINS { E2, C7, C6, B6, B5, B4, D7, D6, D4, B7, D3 } // these are ok
 
 // ROW pins are input pulled-up high pins; they are read according to the selected COL
-#define MATRIX_ROW_PINS { F0, F1, F4, F5, F6, F7, E6 } 
+#define MATRIX_ROW_PINS { F0, F1, F4, F5, F6, F7, E6 }
 // port F is problematic? Port F4,F5,F7 are also for JTAG testing interface - PF7 on one board not ok
 // JTAG-capable MCUs come from the factory with the JTAGEN fuse set, and it takes over certain pins of the MCU that the board may be using for the switch matrix, LEDs, etc. - hfuse 0x99 (JTAG enabled) or 0xD9 (JTAG disabled)
-// By default, with QMK the JTAG debugging interface is disabled as soon as the keyboard starts up. 
+// By default, with QMK the JTAG debugging interface is disabled as soon as the keyboard starts up.
 // defined in tmk_core/common/keyboard.c as function disable_jtag
-// port F pins are tristated just after reset. If JTAG activated pullup on F7, F5, F4 will be active even on reset. 
-// Port F pins now ok - pulled-up inputs - E6 can also be left pulled down - 
+// port F pins are tristated just after reset. If JTAG activated pullup on F7, F5, F4 will be active even on reset.
+// Port F pins now ok - pulled-up inputs - E6 can also be left pulled down -
 // NO: can this be because of conflict with QMK DFU bootloader //#define QMK_LED E6
 
 /**
@@ -92,22 +80,17 @@ AIO           AIN0                INPUT*
 
 **/
 
-// pins unused by the keyboard for reference
-#define UNUSED_PINS {}
-//#define UNUSED_PINS  { E2, B0 }
-// HWB/PE2 pin to ground - can be set as input only - never as output!
-
 // Debounce reduces chatter (unintended double-presses) - default: 5; set 0 if debouncing is not needed
-#define DEBOUNCE 5 //5
+#define DEBOUNCE 5
 
-// delay in microseconds when between changing matrix pin state and reading values 
+// delay in microseconds when between changing matrix pin state and reading values
 // in matrix.c: just after select_col(current_col) and before reading rows for current_col
 #define MATRIX_IO_DELAY 30 //default 30; 100, 1000 is 1ms, 1000000 is 1s
 
 // sets the USB polling rate in milliseconds for the keyboard, mouse, and shared (NKRO/media keys) interfaces
 //#define USB_POLLING_INTERVAL_MS 10
 
-// sets the I2C clock rate speed for keyboards using I2C. The default is 400000L 
+// sets the I2C clock rate speed for keyboards using I2C. The default is 400000L
 // we may use it for PSU module
 //#define F_SCL 100000L
 
@@ -115,21 +98,16 @@ AIO           AIN0                INPUT*
 
 //#define DEBUG_MATRIX_SCAN_RATE   // we get 1200 Hz to 500 Hz
 
-/* 
- PB0 ISP ss - slave (SPI communication not used)  
- PB1 ISP sclk  
- PB2 ISP mosi  
- PB3 ISP miso	
- 
+/*
+ PB0 ISP ss - slave (SPI communication not used)
+ PB1 ISP sclk
+ PB2 ISP mosi
+ PB3 ISP miso
+
  now PS/2:
  PB1 ps/2 clock PCINT1
  PB7 ps/2 data
 */
-
-																																		
-// disable these deprecated features by default
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
 
 //#define LOCKING_SUPPORT_ENABLE
 // Locking resynchronize hack
@@ -139,7 +117,7 @@ AIO           AIN0                INPUT*
 // PS2 trackpad
 /*https://docs.qmk.fm/#/feature_ps2_mouse*/
 /*
-trackpad without native buttons. A touch on trackpad changes the F6, F7 keys to left and right buttons 
+trackpad without native buttons. A touch on trackpad changes the F6, F7 keys to left and right buttons
 */
 
 #ifdef PS2_MOUSE_ENABLE
@@ -178,17 +156,17 @@ trackpad without native buttons. A touch on trackpad changes the F6, F7 keys to 
 
 #ifdef PS2_USE_USART
   #define PS2_CLOCK_PORT  PORTD
-  #define PS2_CLOCK_PIN   PIND
+  #define PS2_CLOCK_PIN   D1
   #define PS2_CLOCK_DDR   DDRD
   #define PS2_CLOCK_BIT   5
 
   #define PS2_DATA_PORT   PORTD
-  #define PS2_DATA_PIN    PIND
+  #define PS2_DATA_PIN    D2
   #define PS2_DATA_DDR    DDRD
   #define PS2_DATA_BIT    2
 
   // synchronous, odd parity, 1-bit stop, 8-bit data, sample at falling edge.
-  // Set DDR of CLOCK as input to be slave 
+  // Set DDR of CLOCK as input to be slave
 
   #define PS2_USART_INIT() do {   \
 	    PS2_CLOCK_DDR &= ~(1<<PS2_CLOCK_BIT);   \
@@ -227,17 +205,17 @@ trackpad without native buttons. A touch on trackpad changes the F6, F7 keys to 
 
 // Additional mouse/ trackpad settings
 
-// Use remote mode instead of the default stream mode 
+// Use remote mode instead of the default stream mode
 //#define PS2_MOUSE_USE_REMOTE_MODE
 
-// Enable the scrollwheel or scroll gesture on your mouse or touchpad 
+// Enable the scrollwheel or scroll gesture on your mouse or touchpad
 #define PS2_MOUSE_ENABLE_SCROLLING
 // Some mice will need a scroll mask to be configured. The default is 0xFF
 //#define PS2_MOUSE_SCROLL_MASK 0x0F
 // Applies a transformation to the movement before sending to the host
 //#define PS2_MOUSE_USE_2_1_SCALING
 // The time to wait after initializing the ps2 host
-//#define PS2_MOUSE_INIT_DELAY 1000 // Default 
+//#define PS2_MOUSE_INIT_DELAY 1000 // Default
 
 // The available buttons for (trackpoint) are:
 //#define PS2_MOUSE_BTN_LEFT      0
@@ -268,4 +246,4 @@ trackpad without native buttons. A touch on trackpad changes the F6, F7 keys to 
 
 #endif  // end PS2_MOUSE_ENABLE
 
-
+#define OLED_FONT_H "keymaps/toucholed/glcdfont.c"

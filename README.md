@@ -20,6 +20,14 @@ The keys have some ergonomic solution that gives some additional design touch. T
 
 KiCad 5.1.5 files are uploaded here as well as the drawings pictures and firmware code.
 
+### OLED & boot sequence
+
+A 128x32 SSD130 64x128 display connected via i2c is used.
+When starting up, you are asked to enter a password. If it's not set up yet, a new one can be entered.
+After successful authentication, a boot menu is presented.
+
+**_beware:_** The password is saved plaintext in the microcontroller's EEPROM. It can be extracted with proper equipment and can easily be overwritten on the currently used ATmega32u4.
+
 ## License
 
 All resources except the keyboard firmware - which is licensed with with GPLv3 or later - licensed under the CERN Open Hardware Licence CERN-OHL W V.2.0
