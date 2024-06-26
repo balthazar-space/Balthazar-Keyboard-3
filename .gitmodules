@@ -1,0 +1,3 @@
+[submodule "software/QMK"]
+	path = software/QMK
+	url = https://github.com/balthazar-space/balthazarKeyboardQMK
