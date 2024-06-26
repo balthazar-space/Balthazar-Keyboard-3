@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 7x11 => diode dir = ROW2COL
 // we scan 7 rows       left half 1-7            right half 1-7
 // notation: K(col:01-11)(row:1-7)
-#define LAYOUT_all( \
+#define KEYMAP( \
      K011, K012, K013, K014, K015, K016, K017,     K111, K112, K113, K114, K115, K116, K117, \
     K031, K021, K022, K023, K024, K025, K026, K027, K101, K102, K103, K104, K105, K106, K107, \
     K051, K041, K032, K033, K034, K035, K036, K037, K091, K092, K093, K094, K095, K096, K097, \
@@ -39,3 +39,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { K017, K027, K037, K047, K057, K067, K077, K087, K097, K107, K117 }, \
 }
 
+#define LAYOUT KEYMAP

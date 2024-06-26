@@ -17,11 +17,11 @@ MCU = atmega32u4
 #   ATmega328P   USBasp
 
 #BOOTLOADER = atmel-dfu
-BOOTLOADER = caterina 
+BOOTLOADER = caterina
 # promicro
 #BOOTLOADER = lufa-dfu
 #QMK maintains a fork of the LUFA DFU bootloader that additionally performs a simple matrix scan for exiting the bootloader
-#and returning to the application, as well as flashing an LED/making a ticking noise 
+#and returning to the application, as well as flashing an LED/making a ticking noise
 #BOOTLOADER = qmk-dfu
 
 
@@ -30,7 +30,7 @@ BOOTLOADER = caterina
 
 PS2_MOUSE_ENABLE = no 		# use ps/2 touchpad - not yet
 MOUSEKEY_ENABLE = no        	# Mouse keys - we dont use buttons on mousepad, but on keyboard
-#To use USART on the ATMega32u4, you have to use PD5 for clock and PD2 for data. 
+#To use USART on the ATMega32u4, you have to use PD5 for clock and PD2 for data.
 #If one of those are unavailable, you need to use interrupt version.
 #PS2_USE_INT = yes  		# first we us this one
 #PS2_USE_USART = yes		# later we will use this one
@@ -41,10 +41,9 @@ EXTRAKEY_ENABLE = no        # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 
-# optional small i2c OLED 128x32
-OLED_ENABLE = yes 	# enable optional small i2c OLED
-OLED_DRIVER = SSD1306	   # default for both SSD1306 and SH1106
- 
+# optional small i2c OLED 128x64 (see toucholed keymap)
+OLED_ENABLE = no
+
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
 # if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
@@ -64,3 +63,5 @@ FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
 #WAIT_FOR_USB  = yes		#Forces the keyboard to wait for a USB connection to be established before it starts up
 #NO_USB_STARTUP_CHECK  = yes	#Disables usb suspend check after keyboard startup. Usually the keyboard waits for the host to wake it up before any tasks are performed. This is useful for split keyboards as one half will not get a wakeup call but must send commands to the master.
 
+# Link time optimization
+LTO_ENABLE = yes
